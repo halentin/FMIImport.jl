@@ -98,7 +98,7 @@ function createFMU2(fmuPath, fmuZipPath; type::Union{Symbol, fmi2Type, Nothing}=
         if juliaArch == 64
             directories = [joinpath("binaries", "win64"), joinpath("binaries","x86_64-windows")]
         else
-            directories = [joinpath("binaries", "win32"), joinpath("binaries","i686-windows")]
+            directories = [joinpath("binaries", "win32"), joinpath("binaries","x86-windows")]
         end
         osStr = "Windows"
         fmuExt = "dll"
@@ -125,6 +125,8 @@ function createFMU2(fmuPath, fmuZipPath; type::Union{Symbol, fmi2Type, Nothing}=
     @assert (length(directories) > 0) "createFMU2(...): Unsupported architecture. Supporting Julia for Windows (64- and 32-bit), Linux (64-bit) and Mac (64-bit). Please open an issue if you want to use another architecture."
     for directory in directories
         directoryBinary = joinpath(fmu.path, directory)
+        println("directoryBinary: ", directoryBinary)
+        println(isdir(directoryBinary))
         if isdir(directoryBinary)
             pathToBinary = joinpath(directoryBinary, "$(fmuName).$(fmuExt)")
             break
