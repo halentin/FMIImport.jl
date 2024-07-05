@@ -255,4 +255,4 @@ fmi3GetFloat64!(inst, float64ValueReferences, cacheFloat64)
 # Clean up #
 ############
 
-unloadFMU(myFMU)
+# unloadFMU(myFMU)
