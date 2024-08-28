@@ -9,11 +9,21 @@ import Random
 using FMIZoo
 
 using FMIImport.FMICore: fmi2Integer, fmi2Boolean, fmi2Real, fmi2String
-using FMIImport.FMICore: fmi3Float32, fmi3Float64, fmi3Int8, fmi3UInt8, fmi3Int16, fmi3UInt16, fmi3Int32, fmi3UInt32, fmi3Int64, fmi3UInt64
+using FMIImport.FMICore:
+    fmi3Float32,
+    fmi3Float64,
+    fmi3Int8,
+    fmi3UInt8,
+    fmi3Int16,
+    fmi3UInt16,
+    fmi3Int32,
+    fmi3UInt32,
+    fmi3Int64,
+    fmi3UInt64
 using FMIImport.FMICore: fmi3Boolean, fmi3String, fmi3Binary
 
-exportingToolsWindows = [("Dymola", "2022x")]
-exportingToolsLinux = [("Dymola", "2022x")]
+exportingToolsWindows = [("Dymola", "2023x")]
+exportingToolsLinux = [("Dymola", "2023x")]
 
 function runtestsFMI2(exportingTool)
     ENV["EXPORTINGTOOL"] = exportingTool[1]
